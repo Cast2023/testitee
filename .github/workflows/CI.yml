@@ -23,7 +23,7 @@ jobs:
           echo "${{ secrets.TESTS_ENV_FILE }}" | base64 -d > .env
           cp .env backend/
           cp .env frontend/
-          docker compose -f docker-compose-tests.yml up --exit-code-from robo
+          docker compose -f docker-compose.tests.yml up --exit-code-from robo
   deploy:
     needs: tests
 
